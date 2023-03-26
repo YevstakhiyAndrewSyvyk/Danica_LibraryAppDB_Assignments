@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
  * abstract - to prevent instantiation.
  */
 public abstract  class BasePage {
-//test
+//Test?
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
