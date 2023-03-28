@@ -20,28 +20,28 @@ public class US04_StepDefs {
     String searchBookName;
     List<String> actuallist;
 
-    @Given("the user logged in as {string}")
+    @Given("the user logged in as {string} MY")
     public void theUserLoggedInAs(String user) {
         loginPage.login(user);
         BrowserUtil.waitFor(4);
     }
 
-    @And("the user navigates to {string} page")
+    @And("the user navigates to {string} page MY")
     public void theUserNavigatesToPage(String moduleName) {
         new DashBoardPage().navigateModule(moduleName);
     }
-    @When("the user searches for {string} book")
+    @When("the user searches for {string} book MY")
     public void theUserSearchesForBook(String searchValue) {
         bookPage.search.sendKeys(searchValue + Keys.ENTER);
         this.searchBookName = searchValue;
     }
 
-    @And("the user clicks edit book button")
+    @And("the user clicks edit book button MY")
     public void theUserClicksEditBookButton() {
         bookPage.editBook(searchBookName).click();
     }
 
-    @Then("book information must match the Database")
+    @Then("book information must match the Database MY")
     public void bookInformationMustMatchTheDatabase() {
         //expectedlist = [Fast & Furious, 09123456, 2023, Mina K, Action and Adventure, This book is for database testing.]
 
