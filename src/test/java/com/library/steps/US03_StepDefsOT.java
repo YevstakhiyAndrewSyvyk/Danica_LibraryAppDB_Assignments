@@ -11,28 +11,28 @@ import org.junit.Assert;
 
 import java.util.List;
 
-public class US03_StepDefs {
+public class US03_StepDefsOT {
     LoginPage loginPage=new LoginPage();
     BookPage bookPage=new BookPage();
 
-    @Given("the {string} on the home page")
+    @Given("the {string} on the home page OT")
     public void the_on_the_home_page(String librarian) {
         loginPage.login(librarian);
         BrowserUtil.waitFor(1);
 
     }
-    @When("the user navigates to {string} page")
-    public void the_user_navigates_to_page(String book) {
+    @When("the user navigates to {string} page OT")
+    public void the_user_navigates_to_page_OT(String book) {
         bookPage.navigateModule(book);
         BrowserUtil.waitFor(1);
 
     }
-    @When("the user clicks book categories")
+    @When("the user clicks book categories OT")
     public void the_user_clicks_book_categories() {
         BrowserUtil.clickWithTimeOut(bookPage.mainCategoryElement,2);
 
     }
-    @Then("verify book categories must match book_categories table from db")
+    @Then("verify book categories must match book_categories table from db OT")
     public void verify_book_categories_must_match_book_categories_table_from_db() {
         //Actual List of Book Categories from UI
         List<String> actualBookCategories=BrowserUtil.getAllSelectOptions(bookPage.mainCategoryElement);
